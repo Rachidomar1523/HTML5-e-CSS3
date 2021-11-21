@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"6a5485b2c2",applicationID:"537212469"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;p("lcp",[r])}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){if(t instanceof g&&!y){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=l.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d,p=t("handle"),l=t("loader"),v=t(9),m=t(3),g=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(h){}s=new PerformanceObserver(i);try{s.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}d=new PerformanceObserver(o);try{d.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var y=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,m(!1))})}v(c)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){y[t]=m(t).concat(e)}function v(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:h,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=P.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+P.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+P.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,h="addEventListener",y="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1212.min.js"},M=w&&b&&b[h]&&!/CriOS/.test(navigator.userAgent),P=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:M,userAgent:s,disabled:E};if(!E){t(1),t(7),g[h]?(g[h]("DOMContentLoaded",o,l(!1)),m[h]("load",r,l(!1))):(g[y]("onreadystatechange",i),m[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#e30047">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#ffffff">    
+        <title>Inequação do 2° Grau. Resolução de inequação do 2º grau</title>
+        
+    <!-- Meta tags --> 
+        <meta name="description" content="Você sabe como se resolve uma inequação do 2° grau? Aprenda aqui como analisá-la e também como encontrar seu conjunto solução!">
+        
+        <meta name="keywords" content="Inequação do 2° Grau, resolução de uma inequação de 2° grau, fórmula de bhaskara.">
+        
+    <meta http-equiv="content-language" content="pt-br"/>
+    
+    <!-- Metas FB e twitter --> 
+    <meta property="og:locale" content="pt_BR" />
+        <meta property="og:title" content="Inequação do 2° Grau. Resolução de inequação do 2º grau - PrePara Enem" />
+    <meta property="twitter:title" content="Inequação do 2° Grau. Resolução de inequação do 2º grau - PrePara Enem" />
+            <meta name="og:description" content="Você sabe como se resolve uma inequação do 2° grau? Aprenda aqui como analisá-la e também como encontrar seu conjunto solução!">
+    <meta property="twitter:description" content="Você sabe como se resolve uma inequação do 2° grau? Aprenda aqui como analisá-la e também como encontrar seu conjunto solução!" />
+        <meta property="og:site_name" content="PrePara Enem" />
+    <meta property="og:url" content="https://www.preparaenem.com/matematica/inequacao-2-grau.htm" />
+	    <meta property="og:image" content="https://static.preparaenem.com/conteudo_legenda/2e543c7cee6a62bb2d86c37f1ed150a4.jpg" />
+    
+    <!-- Twitter tags for big card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="https://static.preparaenem.com/conteudo_legenda/2e543c7cee6a62bb2d86c37f1ed150a4.jpg" />
+        
+    <link rel="canonical" href="https://www.preparaenem.com/matematica/inequacao-2-grau.htm" />
+
+        <link rel="amphtml" href="https://www.preparaenem.com/amp/matematica/inequacao-2-grau.htm" />
+        
+        <!-- ./END -->
+
+    <link rel="stylesheet" href="https://www.preparaenem.com/assets/css/lib.min.css" />
+
+
+<link rel="stylesheet" href="https://www.preparaenem.com/assets/css/app-1.0.4.min.css" />
+
+<link rel="stylesheet" href="https://www.preparaenem.com/assets/css/fontawesome.min.css" media="print" onload="this.media='all'" />
+<noscript>
+    <link rel="stylesheet" href="https://www.preparaenem.com/assets/css/fontawesome.min.css" />
+</noscript>
+
+
+<link rel="preconnect" href="https://imasdk.googleapis.com">
+<link rel="preconnect" href="http://t.dynad.net">
+<link rel="preconnect" href="http://s.dynad.net">
+
+<link rel="preload" href="https://www.preparaenem.com/assets/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://www.preparaenem.com/assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://www.preparaenem.com/assets/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+    
+            <!-- Structured data -->
+        <script type="application/ld+json">
+            {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":"https:\/\/www.preparaenem.com\/matematica\/inequacao-2-grau.htm","publisher":{"@type":"Organization","name":"PrePara ENEM","logo":{"@type":"ImageObject","url":"https:\/\/www.preparaenem.com\/assets\/img\/logo.png","width":"500","height":"209"}},"headline":"Inequa\u00e7\u00e3o do 2\u00b0 Grau. Resolu\u00e7\u00e3o de inequa\u00e7\u00e3o do 2\u00ba grau","datePublished":"2014-08-22UTC18:40:35","dateModified":"2018-10-23UTC17:04:45","author":{"@type":"Person","name":"Amanda Gon\u00e7alves Ribeiro"},"description":"Voc\u00ea sabe como se resolve uma inequa\u00e7\u00e3o do 2\u00b0 grau? Aprenda aqui como analis\u00e1-la e tamb\u00e9m como encontrar seu conjunto solu\u00e7\u00e3o!","image":{"@type":"ImageObject","url":"https:\/\/static.preparaenem.com\/conteudo_legenda\/2e543c7cee6a62bb2d86c37f1ed150a4.jpg"}}
+        </script>
+    
+    
+    <script type="text/javascript">
+        var YT_API_KEY = 'AIzaSyDvASaFqxCPIyOLm_qJjA2cX55e8DLh3VM';
+    </script>
+    
+    <!--  UOL TAG MANAGER -->
+    <script type="text/javascript">
+		window.universal_variable = window.universal_variable || {};
+		window.universal_variable.dfp = {
+			   "custom_params" : {
+					"subchan" : ""
+				}
+		}
+		window.uolads = window.uolads || [];
+		(function() {
+			var scr = document.createElement("script");
+				scr.async = true;
+				scr.src = "//tm.jsuol.com.br/uoltm.js?id=fnht1u";
+			var el = document.getElementsByTagName("script")[0];
+				el.parentNode.insertBefore(scr, el);
+        })();
+	</script>
+	<!--  End UOL Tag Manager -->
+    
+    <!--  GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-15671289-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-15671289-1');
+    </script>
+    <!-- END GOOGLE ANALYTICS -->
+    
+</head>
+    <body>
+        <header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center logo-header">
+                <div class="logo">
+                                            <a href="https://www.preparaenem.com">
+                            <img src="https://www.preparaenem.com/assets/img/prepara_enem.svg" title="PrePara Enem" alt="PrePara ENEM">
+                        </a>
+                                    </div>
+
+                <ul class="redes">
+                    <li class="redes__search"><i class="fas fa-search"></i></li>
+                    <a target="_blank" href="https://www.facebook.com/preparaenemoficial">
+                        <li class="redes__facebook">
+                            <div><i class="fab fa-facebook-f"></i></div>
+                        </li>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/preparaenemoficial/">
+                        <li class="redes__instagram">
+                            <div><i class="fab fa-instagram"></i></div>
+                        </li>
+                    </a>
+                    <a target="_blank" href="https://twitter.com/prepara_enem">
+                        <li class="redes__twitter">
+                            <div><i class="fab fa-twitter"></i></div>
+                        </li>
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/brasilescola">
+                        <li class="redes__youtube">
+                            <div><i class="fab fa-youtube"></i></div>
+                        </li>
+                    </a>
+                </ul>
+
+                <div id="searchbox" class="form search">
+                    <form class="" action="https://www.preparaenem.com/busca">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="q" placeholder="Buscar no site" />
+                            <input type="submit" class="form-control btn__busca" value="Ok" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid new-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 new-menu-centro">
+                    <ul>
+                                                <li>
+                            <a href="" 
+                                >Disciplinas</a>
+                            <ul>
+                                                                <li><a href="https://www.preparaenem.com/biologia" 
+                                        >Biologia</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/educacao-artistica" 
+                                        >Educação Artística</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/educacao-fisica" 
+                                        >Educação Física</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/espanhol" 
+                                        >Espanhol</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/filosofia" 
+                                        >Filosofia</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/fisica" 
+                                        >Física</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/frances" 
+                                        >Francês</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/portugues/gramatica.htm" 
+                                        >Gramática</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/geografia" 
+                                        >Geografia</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/geografia/geografia-brasil.htm" 
+                                        >Geografia do Brasil</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/historia" 
+                                        >História</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/historia-do-brasil" 
+                                        >História do Brasil</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/ingles" 
+                                        >Inglês</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/portugues/literatura.htm" 
+                                        >Literatura</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/matematica" 
+                                        >Matemática</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/portugues" 
+                                        >Português</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/quimica" 
+                                        >Química</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/portugues/redacao.htm" 
+                                        >Redação</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/religiao" 
+                                        >Religião</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/sociologia" 
+                                        >Sociologia</a>
+                                </li>
+                                                            </ul>
+                        </li>
+                                                <li>
+                            <a href="" 
+                                >Especiais</a>
+                            <ul>
+                                                                <li><a href="https://www.preparaenem.com/datas-comemorativas" 
+                                        >Datas Comemorativas</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/datas-comemorativas/outubro-rosa.htm" 
+                                        >Outubro rosa</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/datas-comemorativas/15-outubro-dia-dos-professores.htm" 
+                                        >Dia dos professores</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/datas-comemorativas/17-outubro-dia-nacional-vacinacao.htm" 
+                                        >Dia Nacional da Vacinação</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/geografia/placas-tectonicas.htm" 
+                                        >Placas Tectônicas</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/historia/direita-esquerda.htm" 
+                                        >Direita e Esquerda</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/geografia/meio-ambiente.htm" 
+                                        >Meio Ambiente</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/geografia/terremoto.htm" 
+                                        >Terremoto</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/geografia/o-terremoto-no-japao.htm" 
+                                        >Terremoto no Japão</a>
+                                </li>
+                                                            </ul>
+                        </li>
+                                                <li>
+                            <a href="" 
+                                >Pesquisa Escolar</a>
+                            <ul>
+                                                                <li><a href="https://www.preparaenem.com/informatica" 
+                                        >Informática</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/biologia/sexualidade.htm" 
+                                        >Sexualidade</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/vestibular" 
+                                        >Vestibular</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/politica" 
+                                        >Política</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/biologia/doencas-saude.htm" 
+                                        >Doenças e Saúde</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/biologia/drogas.htm" 
+                                        >Drogas</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/biologia/reino-animalia.htm" 
+                                        >Animais</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/portugues/duvidas-verbais.htm" 
+                                        >Dúvidas verbais</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/historia/historia-america.htm" 
+                                        >História da América</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/portugues/figuras-linguagem.htm" 
+                                        >Figuras de linguagem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/matematica/matematica-financeira.htm" 
+                                        >Matemática Financeira</a>
+                                </li>
+                                                            </ul>
+                        </li>
+                                                <li>
+                            <a href="https://www.preparaenem.com/enem" 
+                                >Enem</a>
+                            <ul>
+                                                                <li><a href="https://www.preparaenem.com/enem/provas-gabaritos-e-correcoes-do-enem.htm" 
+                                        >Provas e Gabaritos</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/correcao-enem-2021.htm" 
+                                        >Correção Enem 2021</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/dicas-para-o-enem.htm" 
+                                        >Dicas para o Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/cartao-de-inscricao-do-enem.htm" 
+                                        >Cartão de Inscrição do Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/como-calcular-a-media-do-enem.htm" 
+                                        >Como calcular a média</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/como-calcular-a-nota-do-enem.htm" 
+                                        >Como calcular a nota do Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/como-se-inscrever-no-enem.htm" 
+                                        >Como se inscrever no Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/como-trabalhar-no-enem.htm" 
+                                        >Como trabalhar no Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/enem-digital.htm" 
+                                        >Enem Digital</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/fies.htm" 
+                                        >Fies</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/noticias" 
+                                        >Notícias</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/prouni.htm" 
+                                        >ProUni</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/redacao-do-enem.htm" 
+                                        >Redação do Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/resultado-do-enem.htm" 
+                                        >Resultado do Enem</a>
+                                </li>
+                                                                <li><a href="https://www.preparaenem.com/enem/sisu.htm" 
+                                        >SiSU</a>
+                                </li>
+                                                            </ul>
+                        </li>
+                                                <li>
+                            <a href="https://escolakids.uol.com.br" 
+                                >Escola Kids</a>
+                            <ul>
+                                                                <li><a href="https://escolakids.uol.com.br/ciencias/" target=_blank
+                                        >Ciências</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/geografia/" target=_blank
+                                        >Geografia</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/historia/" target=_blank
+                                        >História</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/portugues/" target=_blank
+                                        >Português</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/matematica/" target=_blank
+                                        >Matemática</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/datas-comemorativas/" target=_blank
+                                        >Datas Comemorativas</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/jogos/" target=_blank
+                                        >Jogos Online</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/para-pintar/" target=_blank
+                                        >Para Pintar</a>
+                                </li>
+                                                                <li><a href="https://escolakids.uol.com.br/historias/" target=_blank
+                                        >Histórias</a>
+                                </li>
+                                                            </ul>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menuMobileBox">
+        <div class="menuMobileBox-left menuMobileOpen">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menuMobileBox-center">
+            <a href="https://www.preparaenem.com">
+                <img class="logo" src="https://www.preparaenem.com/assets/img/prepara_enem_rodape.svg" alt="PrePara ENEM" />
+            </a>
+        </div>
+        <div class="menuMobileBox-right searchMobileOpen">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    <div class="menuMobileSearch search form">
+        <form action="https://www.preparaenem.com/busca">
+            <div class="form-group">
+                <input type="text" class="form-control" name="q" placeholder="Buscar no site" />
+                <input type="submit" class="form-control btn__busca" value="Ok" />
+            </div>
+        </form>
+    </div>
+
+    <nav class="menuMobileDrop">
+        <!-- /container -->
+        <div class="container">
+            <!-- /row -->
+            <div class="row menuMobileNavigation">
+                <div class="col-6 menuMobileLogo"><img class="logo" src="https://www.preparaenem.com/assets/img/prepara_enem.svg" alt="PrePara ENEM" />
+                </div>
+                <div class="col-6 menuMobileClose text-right"><i class="fas fa-times"></i></div>
+            </div><!-- ./row -->
+
+            <ul>
+                                <li>
+                    <a href="" 
+                        >Disciplinas</a>
+                    <ul>
+                                                <li><a href="https://www.preparaenem.com/biologia" 
+                                >Biologia</a></li>
+                                                <li><a href="https://www.preparaenem.com/educacao-artistica" 
+                                >Educação Artística</a></li>
+                                                <li><a href="https://www.preparaenem.com/educacao-fisica" 
+                                >Educação Física</a></li>
+                                                <li><a href="https://www.preparaenem.com/espanhol" 
+                                >Espanhol</a></li>
+                                                <li><a href="https://www.preparaenem.com/filosofia" 
+                                >Filosofia</a></li>
+                                                <li><a href="https://www.preparaenem.com/fisica" 
+                                >Física</a></li>
+                                                <li><a href="https://www.preparaenem.com/frances" 
+                                >Francês</a></li>
+                                                <li><a href="https://www.preparaenem.com/portugues/gramatica.htm" 
+                                >Gramática</a></li>
+                                                <li><a href="https://www.preparaenem.com/geografia" 
+                                >Geografia</a></li>
+                                                <li><a href="https://www.preparaenem.com/geografia/geografia-brasil.htm" 
+                                >Geografia do Brasil</a></li>
+                                                <li><a href="https://www.preparaenem.com/historia" 
+                                >História</a></li>
+                                                <li><a href="https://www.preparaenem.com/historia-do-brasil" 
+                                >História do Brasil</a></li>
+                                                <li><a href="https://www.preparaenem.com/ingles" 
+                                >Inglês</a></li>
+                                                <li><a href="https://www.preparaenem.com/portugues/literatura.htm" 
+                                >Literatura</a></li>
+                                                <li><a href="https://www.preparaenem.com/matematica" 
+                                >Matemática</a></li>
+                                                <li><a href="https://www.preparaenem.com/portugues" 
+                                >Português</a></li>
+                                                <li><a href="https://www.preparaenem.com/quimica" 
+                                >Química</a></li>
+                                                <li><a href="https://www.preparaenem.com/portugues/redacao.htm" 
+                                >Redação</a></li>
+                                                <li><a href="https://www.preparaenem.com/religiao" 
+                                >Religião</a></li>
+                                                <li><a href="https://www.preparaenem.com/sociologia" 
+                                >Sociologia</a></li>
+                                            </ul>
+                </li>
+                                <li>
+                    <a href="" 
+                        >Especiais</a>
+                    <ul>
+                                                <li><a href="https://www.preparaenem.com/datas-comemorativas" 
+                                >Datas Comemorativas</a></li>
+                                                <li><a href="https://www.preparaenem.com/datas-comemorativas/outubro-rosa.htm" 
+                                >Outubro rosa</a></li>
+                                                <li><a href="https://www.preparaenem.com/datas-comemorativas/15-outubro-dia-dos-professores.htm" 
+                                >Dia dos professores</a></li>
+                                                <li><a href="https://www.preparaenem.com/datas-comemorativas/17-outubro-dia-nacional-vacinacao.htm" 
+                                >Dia Nacional da Vacinação</a></li>
+                                                <li><a href="https://www.preparaenem.com/geografia/placas-tectonicas.htm" 
+                                >Placas Tectônicas</a></li>
+                                                <li><a href="https://www.preparaenem.com/historia/direita-esquerda.htm" 
+                                >Direita e Esquerda</a></li>
+                                                <li><a href="https://www.preparaenem.com/geografia/meio-ambiente.htm" 
+                                >Meio Ambiente</a></li>
+                                                <li><a href="https://www.preparaenem.com/geografia/terremoto.htm" 
+                                >Terremoto</a></li>
+                                                <li><a href="https://www.preparaenem.com/geografia/o-terremoto-no-japao.htm" 
+                                >Terremoto no Japão</a></li>
+                                            </ul>
+                </li>
+                                <li>
+                    <a href="" 
+                        >Pesquisa Escolar</a>
+                    <ul>
+                                                <li><a href="https://www.preparaenem.com/informatica" 
+                                >Informática</a></li>
+                                                <li><a href="https://www.preparaenem.com/biologia/sexualidade.htm" 
+                                >Sexualidade</a></li>
+                                                <li><a href="https://www.preparaenem.com/vestibular" 
+                                >Vestibular</a></li>
+                                                <li><a href="https://www.preparaenem.com/politica" 
+                                >Política</a></li>
+                                                <li><a href="https://www.preparaenem.com/biologia/doencas-saude.htm" 
+                                >Doenças e Saúde</a></li>
+                                                <li><a href="https://www.preparaenem.com/biologia/drogas.htm" 
+                                >Drogas</a></li>
+                                                <li><a href="https://www.preparaenem.com/biologia/reino-animalia.htm" 
+                                >Animais</a></li>
+                                                <li><a href="https://www.preparaenem.com/portugues/duvidas-verbais.htm" 
+                                >Dúvidas verbais</a></li>
+                                                <li><a href="https://www.preparaenem.com/historia/historia-america.htm" 
+                                >História da América</a></li>
+                                                <li><a href="https://www.preparaenem.com/portugues/figuras-linguagem.htm" 
+                                >Figuras de linguagem</a></li>
+                                                <li><a href="https://www.preparaenem.com/matematica/matematica-financeira.htm" 
+                                >Matemática Financeira</a></li>
+                                            </ul>
+                </li>
+                                <li>
+                    <a href="https://www.preparaenem.com/enem" 
+                        >Enem</a>
+                    <ul>
+                                                <li><a href="https://www.preparaenem.com/enem/provas-gabaritos-e-correcoes-do-enem.htm" 
+                                >Provas e Gabaritos</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/correcao-enem-2021.htm" 
+                                >Correção Enem 2021</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/dicas-para-o-enem.htm" 
+                                >Dicas para o Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/cartao-de-inscricao-do-enem.htm" 
+                                >Cartão de Inscrição do Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/como-calcular-a-media-do-enem.htm" 
+                                >Como calcular a média</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/como-calcular-a-nota-do-enem.htm" 
+                                >Como calcular a nota do Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/como-se-inscrever-no-enem.htm" 
+                                >Como se inscrever no Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/como-trabalhar-no-enem.htm" 
+                                >Como trabalhar no Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/enem-digital.htm" 
+                                >Enem Digital</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/fies.htm" 
+                                >Fies</a></li>
+                                                <li><a href="https://www.preparaenem.com/noticias" 
+                                >Notícias</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/prouni.htm" 
+                                >ProUni</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/redacao-do-enem.htm" 
+                                >Redação do Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/resultado-do-enem.htm" 
+                                >Resultado do Enem</a></li>
+                                                <li><a href="https://www.preparaenem.com/enem/sisu.htm" 
+                                >SiSU</a></li>
+                                            </ul>
+                </li>
+                                <li>
+                    <a href="https://escolakids.uol.com.br" 
+                        >Escola Kids</a>
+                    <ul>
+                                                <li><a href="https://escolakids.uol.com.br/ciencias/" target=_blank
+                                >Ciências</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/geografia/" target=_blank
+                                >Geografia</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/historia/" target=_blank
+                                >História</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/portugues/" target=_blank
+                                >Português</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/matematica/" target=_blank
+                                >Matemática</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/datas-comemorativas/" target=_blank
+                                >Datas Comemorativas</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/jogos/" target=_blank
+                                >Jogos Online</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/para-pintar/" target=_blank
+                                >Para Pintar</a></li>
+                                                <li><a href="https://escolakids.uol.com.br/historias/" target=_blank
+                                >Histórias</a></li>
+                                            </ul>
+                </li>
+                            </ul>
+        </div><!-- ./container -->
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="publicidade-cima-container">
+                <div class="publicidade-cima">
+                    <div class='box-publicidade-topo'>
+                        <div id="banner-728x90-area"><script>window.uolads && window.uolads.push({ id: "banner-728x90-area" });</script></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="container titlenews">
+            <div class="col-12">
+                <h1>Inequação do 2° Grau</h1>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="listagem"> 
+                <div class="socialweb">
+    <a target="_blank" href="https://www.preparaenem.com/matematica/inequacao-2-grau.htm" class="geral facebook" data-share="facebook" alt="Compartilhar no Facebook" title="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a target="_blank" href="https://www.preparaenem.com/matematica/inequacao-2-grau.htm" class="geral twitter" data-share="twitter" alt="Compartilhar no Twitter" title="Compartilhar no Twitter"><i class="fab fa-twitter"></i></a>
+        <a target="_blank" href="https://www.preparaenem.com/matematica/inequacao-2-grau.htm" class="geral whatsapp" data-share="whatsapp" alt="Compartilhar no Whatsapp Web" title="Compartilhar no Whatsapp Web"><i class="fab fa-whatsapp"></i></a>
+    </div>
+                <div class="row">  
+                    <div class="col-md-12 col-lg-8 col-sm-12 news">
+                        <div class="row breadcrumbs">
+    <div class="col-md-12">
+        <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.preparaenem.com">
+                    <span itemprop="name">Home</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+            </li>
+                                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    
+                                                                    <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.preparaenem.com/matematica">
+                                                                    <span itemprop="name">Matemática</span>
+                        <meta itemprop="position" content="2" />
+                    </a>
+                </li>
+                                                            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    
+                                                                    <a itemtype="https://schema.org/Thing" itemprop="item" href="https://www.preparaenem.com/matematica/equacoes-inequacoes.htm">
+                                                                    <span itemprop="name">Equações e inequações</span>
+                        <meta itemprop="position" content="3" />
+                    </a>
+                </li>
+                                                            <li>
+                    <span>Inequação do 2° Grau</span>
+                </li>
+                                    </ol>
+    </div>
+</div>                 
+                        
+                                                    <p class="resumo">Para resolver uma inequação do 2° grau, devemos aplicar o método do estudo da variação do sinal de uma função do segundo grau.</p>
+                        
+                        <figure class="principal-image">
+    <img src="https://static.preparaenem.com/conteudo_legenda/2e543c7cee6a62bb2d86c37f1ed150a4.jpg" onerror="this.src='https://www.preparaenem.com/img/404_image.png'" class="img-fluid" title="" alt="Aprenda a resolver uma inequação do 2° grau">
+            <figcaption>Aprenda a resolver uma inequação do 2° grau</figcaption>
+    </figure>
+
+                                                    <div class="pub_left_text">
+                                <div id="banner-300x250-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-area" });</script></div>
+                            </div>
+                        
+                        <div class="content">
+                            <div><p>Uma equa&ccedil;&atilde;o do 2&deg; grau tem a forma <strong>ax&sup2; + bx + c = 0,</strong> j&aacute; a <a href="https://www.preparaenem.com/matematica/inequacao.htm">inequa&ccedil;&atilde;o</a> do 2&deg; grau tem formato semelhante, diferenciando-se apenas pelo fato de o sinal de <strong>= </strong>ser substitu&iacute;do por alguma das desigualdades: <strong>&gt;</strong> (<em>maior que</em>), <strong>&lt; </strong>(<em>menor que</em>), <strong>&ge; </strong>(<em>maior ou igual a</em>), <strong>&le; </strong>(<em>menor ou igual a</em>).</p>
+
+<p>A mesma ideia vista no <a href="https://www.preparaenem.com/matematica/estudo-variacao-sinal-uma-funcao-2-grau.htm"><em>estudo da varia&ccedil;&atilde;o do sinal de uma fun&ccedil;&atilde;o do segundo grau</em></a> deve ser aplicada para a resolu&ccedil;&atilde;o de uma inequa&ccedil;&atilde;o de 2&deg; grau. Vejamos alguns exemplos de inequa&ccedil;&otilde;es para analisar como &eacute; feito o estudo da varia&ccedil;&atilde;o do sinal:</p>
+
+<p><strong>Exemplo 1: <span style="color:#b22222">x&sup2; + x &ndash; 2 &ge; 0</span></strong></p>
+
+<p>Utilizaremos a <a href="https://www.preparaenem.com/matematica/bhaskara.htm">f&oacute;rmula de Bhaskara</a> para resolver a fun&ccedil;&atilde;o quadr&aacute;tica <strong>y = x&sup2; + x &ndash; 2</strong>:</p>
+
+<p><strong>&Delta; = b&sup2; &ndash; 4.a.c</strong><br>
+<strong>&Delta; = 1&sup2; &ndash; 4.1.(&ndash; 2)</strong><br>
+<strong>&Delta; = 1 + 8</strong><br>
+<strong>&Delta; = 9</strong></p>
+
+<p><img alt="" height="35" src="/upload/conteudo/images/bhaskara.jpg" width="83"></p>
+
+<p><strong>x = <u>&ndash; 1 &plusmn; </u><u>&radic;9</u></strong><br>
+<strong>&nbsp; &nbsp; &nbsp; &nbsp;2.1</strong></p>
+
+<p><strong>x = <u>&ndash; 1 &plusmn; 3</u></strong><br>
+<strong>&nbsp; &nbsp; &nbsp; &nbsp;2</strong></p>
+
+<p>Podemos ter dois resultados:</p>
+
+<p><strong>x<sub>1</sub> = <u>&ndash; 1 + 3 </u> =<u> 2 </u> = 1</strong><br>
+<strong>&nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; &nbsp;2</strong></p>
+
+<p><strong>x<sub>2</sub> = <u>&ndash; 1 &ndash; 3 </u> =<u> &ndash; 4 </u> = &ndash; 2</strong><br>
+<strong>&nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; 2</strong></p>
+
+<p>Analisando o sinal de y, podemos concluir que o gr&aacute;fico possui <strong>concavidade para cima,</strong> pois <strong>a = 1 &gt; 0</strong>. Podemos ainda afirmar que, como <strong>&Delta; = 9 &gt; 0</strong>, a fun&ccedil;&atilde;o tem <strong>duas ra&iacute;zes</strong> (1 e &ndash; 2). Observe a seguir a varia&ccedil;&atilde;o do sinal para y:</p>
+
+<p style="text-align:center"><span style="font-size:11px"><img alt="Varia&ccedil;&atilde;o do sinal da fun&ccedil;&atilde;o y = x&sup2; + x &ndash; 2" height="105" src="/upload/conteudo/images/inequacao-exemplo-1.jpg" title="Inequa&ccedil;&atilde;o &ndash; Exemplo 1" width="220"></span><br>
+<span style="font-size:14px">Varia&ccedil;&atilde;o do sinal da fun&ccedil;&atilde;o y = x&sup2; + x &ndash; 2</span></p><div class='pub_insert_content'><span>Não pare agora... Tem mais depois da publicidade ;)</span><div class='pub-300x250'><div id="banner-300x250-2-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-2-area" });</script></div></div></div>
+
+<p>Para que valores de x teremos <strong>y </strong><strong>&ge;</strong><strong> 0</strong>? Esses valores s&atilde;o <strong>1 </strong><strong>&le;</strong><strong> x </strong><strong>&le;</strong><strong> &ndash; 2 </strong>e est&atilde;o destacados em vermelho na imagem acima.</p>
+
+<p><strong>Exemplo 2: <span style="color:#b22222">&ndash; x.(x + 1) &lt; 0</span></strong></p>
+
+<p>Desenvolvendo a inequa&ccedil;&atilde;o acima, temos: <strong>&ndash; x&sup2; &ndash; x &lt; 0</strong>. Consideramos y como a fun&ccedil;&atilde;o <strong>y = &ndash; x&sup2; &ndash; x</strong>.</p>
+
+<p>Atrav&eacute;s da f&oacute;rmula de Bhaskara, &eacute; poss&iacute;vel fazer o estudo do sinal da fun&ccedil;&atilde;o:</p>
+
+<p><strong>&Delta; = b&sup2; &ndash; 4.a.c</strong><br>
+<strong>&Delta; = (&ndash;1 )&sup2; &ndash; 4.(&ndash; 1).0</strong><br>
+<strong>&Delta; = 1</strong></p>
+
+<p><img alt="" height="35" src="/upload/conteudo/images/bhaskara.jpg" width="83"></p>
+
+<p><strong>x = <u>&ndash; (&ndash; 1) &plusmn; </u><u>&radic;1</u></strong><br>
+<strong>&nbsp; &nbsp; &nbsp; &nbsp; 2.(&ndash; 1)</strong></p>
+
+<p><strong>x = <u> 1 &plusmn; 1</u></strong><br>
+&nbsp; &nbsp; &nbsp; &ndash;<strong>2</strong></p>
+
+<p>Podemos ter dois resultados:</p>
+
+<p><strong>x<sub>1</sub> = <u> 1 + 1 </u> =<u> 2 </u> = &ndash; 1</strong><br>
+&nbsp;&ndash; <strong>2 &nbsp; &nbsp;&ndash; 2</strong></p>
+
+<p><strong>x<sub>2</sub> = <u>1 &ndash; 1 </u> =<u> 0 </u> = 0</strong><br>
+&nbsp; &nbsp;&ndash; <strong>2 &nbsp;&nbsp; &ndash; 2</strong></p>
+
+<p>O gr&aacute;fico dessa fun&ccedil;&atilde;o possui <strong>concavidade para baixo,</strong> pois <strong>a = &ndash; 1 &lt; 0.</strong> Como <strong>&Delta; = 1 &gt; 0</strong>, temos <strong>duas ra&iacute;zes</strong> para essa fun&ccedil;&atilde;o (0 e &ndash; 1). A varia&ccedil;&atilde;o do sinal ocorre da seguinte forma:</p>
+
+<p style="text-align:center"><span style="font-size:11px"><img alt="Varia&ccedil;&atilde;o do sinal da fun&ccedil;&atilde;o y = &ndash; x&sup2; &ndash; x" height="105" src="/upload/conteudo/images/inequacao-exemplo-2.jpg" title="Inequa&ccedil;&atilde;o &ndash; Exemplo 2" width="220"></span><br>
+<span style="font-size:14px">Varia&ccedil;&atilde;o do sinal da fun&ccedil;&atilde;o y = &ndash; x&sup2; &ndash; x</span></p>
+
+<p>Os valores de <strong>x </strong>para que <strong>y &lt; 0</strong> s&atilde;o <strong>0 </strong><strong>&lt;</strong><strong> x </strong><strong>&lt;</strong><strong> &ndash; 1</strong>. Observe que, como o sinal da inequa&ccedil;&atilde;o &eacute; <strong>&lt;</strong>, e n&atilde;o <strong>&le;</strong>, os valores <strong>x = 0 </strong>e <strong>x = &ndash; 1</strong> n&atilde;o comp&otilde;em a solu&ccedil;&atilde;o da inequa&ccedil;&atilde;o, pois, para esses valores de <strong>x, </strong>ter&iacute;amos <strong>y = 0</strong>. Por essa raz&atilde;o, esses pontos aparecem em branco na imagem da an&aacute;lise da varia&ccedil;&atilde;o do sinal.</p>
+</div>
+ 
+                        </div>
+
+                        <span class="autor_artigo">
+        Por: Amanda Gonçalves Ribeiro
+                    </span>
+
+                        
+                                                    <div class="itens-relacionados">
+    <h3>Artigos relacionados</h3>
+    
+    <div class="col-md-12 no-padding">
+        <div class="card-deck">
+                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/bhaskara.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/9768480add7616fa1fe2081ce3542378.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/bhaskara.htm" class="card-title relacionadas--g">Bhaskara: resolvendo uma equação completa do 2° Grau</a>
+                            <p>Aprenda a deduzir a fórmula de Bhaskara e também a utilizá-la para encontrar raízes de uma equação do 2° grau.</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/equacao-primeiro-grau.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/1d03805ff97e544ae23ccff26f055b99.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/equacao-primeiro-grau.htm" class="card-title relacionadas--g">Equação do primeiro grau</a>
+                            <p>Entenda o que é uma equação do primeiro grau e confira um modo prático de resolvê-las!</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/estudo-variacao-sinal-uma-funcao-2-grau.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/0558a06599f34b77598094c903939633.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/estudo-variacao-sinal-uma-funcao-2-grau.htm" class="card-title relacionadas--g">Estudo da variação do sinal de uma função do 2° grau</a>
+                            <p>Aprenda a identificar o sinal de uma função do 2° grau analisando o delta da função e descubra se a parábola toca ou não o eixo x.</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/formula-bhaskara.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/2019/05/1-formula-de-bhaskara.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/formula-bhaskara.htm" class="card-title relacionadas--g">Fórmula de Bhaskara</a>
+                            <p>Aprenda a utilizar a fórmula de Bhaskara para resolver equações do segundo grau com maior facilidade!</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/inequacao.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/977b618c19f9542513454ca2d6a63d51.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/inequacao.htm" class="card-title relacionadas--g">Inequação </a>
+                            <p>Resolução de uma inequação e representação da solução na reta numérica.</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/inequacao-1-grau.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/152e6afda7b84bfd155253fd17881265.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/inequacao-1-grau.htm" class="card-title relacionadas--g">Inequação do 1º grau</a>
+                            <p>O estudo das inequações do 1º grau consiste em expressões algébricas cujas incógnitas são do 1º grau, entretanto com a condição de desigualdade entre essas expressões.</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/inequacao-produto.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/92333af386530aef71f7b9008a5b8c16.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/inequacao-produto.htm" class="card-title relacionadas--g">Inequação produto</a>
+                            <p>Estudo da inequação-produto e obtenção de seu conjunto solução através da intersecção dos conjuntos solução das funções que compõem a inequação produto.</p>
+                        </div>
+                    </div>
+                                                                <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card">
+                            <a href="https://www.preparaenem.com/matematica/propriedades-desigualdade.htm" class="relacionadas--g">
+                                <img data-src="https://static.preparaenem.com/conteudo_legenda/022faa0ed172cb45b394c58f9ce3a9b4.jpg" src="https://www.preparaenem.com/assets/img/loading.gif" onerror="this.src='https://www.preparaenem.com/assets/img/404_image.png'" class="lozad" title="" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 no-padding noticia-secundaria">
+                        <div class="card-body reset-card-body">
+                            <a href="https://www.preparaenem.com/matematica/propriedades-desigualdade.htm" class="card-title relacionadas--g">Propriedades da desigualdade</a>
+                            <p>Clique para aprender algumas características básicas das inequações e as propriedades que a desigualdade possui.</p>
+                        </div>
+                    </div>
+                                    </div>
+    </div>
+</div>
+                                            </div>
+
+                    <div class="col-md-12 col-sm-12 col-lg-4 col-xl-4 sidebar">
+        
+    <div class="ultimasaulas">
+    <h2 class="text-center">Últimas Aulas</h2>
+
+        <a href="" data-video-id="mrR2Qc53gQs" autoplay="true" class="thumbvideo-destaque js-modal-btn lozad" data-background-image="https://static.preparaenem.com/2021/10/segunda-guerra-mundial.jpg">
+        <div class="thumbvideo-destaque__content">
+            <div class="thumb-video-destaque__play"><div><i class="fas fa-play"></i></div></div>
+            <div class="thumb-video-destaque__title ">
+                <h5>Segunda Guerra Mundial</h5>
+            </div>
+        </div>
+    </a>
+        <a href="" data-video-id="U6n2KmK7nGU" autoplay="true" class="thumbvideo-destaque js-modal-btn lozad" data-background-image="https://static.preparaenem.com/2021/03/transcricao-do-rna.jpg">
+        <div class="thumbvideo-destaque__content">
+            <div class="thumb-video-destaque__play"><div><i class="fas fa-play"></i></div></div>
+            <div class="thumb-video-destaque__title ">
+                <h5>Transcrição do RNA</h5>
+            </div>
+        </div>
+    </a>
+        <a href="" data-video-id="YpqRJvp5bug" autoplay="true" class="thumbvideo-destaque js-modal-btn lozad" data-background-image="https://static.preparaenem.com/2020/02/equacao-de-clapeyron.jpg">
+        <div class="thumbvideo-destaque__content">
+            <div class="thumb-video-destaque__play"><div><i class="fas fa-play"></i></div></div>
+            <div class="thumb-video-destaque__title ">
+                <h5>Equação de Clapeyron</h5>
+            </div>
+        </div>
+    </a>
+        <a href="" data-video-id="-XLZpkbcOVE" autoplay="true" class="thumbvideo-destaque js-modal-btn lozad" data-background-image="https://static.preparaenem.com/2021/04/espelhos-esfericos-convexos.jpg">
+        <div class="thumbvideo-destaque__content">
+            <div class="thumb-video-destaque__play"><div><i class="fas fa-play"></i></div></div>
+            <div class="thumb-video-destaque__title ">
+                <h5>Espelhos esféricos: convexos</h5>
+            </div>
+        </div>
+    </a>
+    
+    <a href="https://www.youtube.com/brasilescola" target="_blank" class="todas-videoaulas">Todas as vídeo aulas</a>
+</div>
+            <div id="area_flutuante_1" style="min-height: 600px;">
+            <div id="pub-flutuante-1" style="height: 600px;">
+                <div id="banner-300x600-area"><script>window.uolads && window.uolads.push({ id: "banner-300x600-area" });</script></div>
+            </div>
+        </div>
+    </div>                </div> 
+            </div>
+        </div>
+
+        <script>
+            var page = 'artigo';
+        </script>
+
+        <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="https://www.preparaenem.com">
+                    <img src="https://www.preparaenem.com/assets/img/prepara_enem_rodape.svg" class="img-responsive" alt="PrePara ENEM">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <h4>Fique por dentro</h4>
+                <ul class="list-unstyled">
+                    <li><a target="_blank" href="http://www.redeomnia.com/quem-somos/">Quem somos</a></li>
+                    <li><a target="_blank" href="http://www.redeomnia.com/quem-somos/">Expediente</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4>Legal</h4>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.preparaenem.com/termos-uso">Termo de uso</a></li>
+                    <li><a href="https://www.preparaenem.com/politica-privacidade">Política de privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h4>Fale conosco</h4>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.preparaenem.com/contato">Envie sua pergunta</a></li>
+                    <li><a href="https://www.preparaenem.com/contato">Denuncie</a></li>
+                    <li><a target="_blank" href="http://redeomnia.com/portfolios/alunos-online/">Anuncie no site</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-12">
+                <ul class="redes--mobile">
+                    <a target="_blank" href="https://www.facebook.com/preparaenemoficial"><li class="redes__facebook"><div><i class="fab fa-facebook-f"></i></div></li></a>
+                    <a target="_blank" href="https://www.instagram.com/preparaenemoficial/"><li class="redes__instagram"><div><i class="fab fa-instagram"></i></div></li></a>
+                    <a target="_blank" href="https://twitter.com/prepara_enem"><li class="redes__twitter"><div><i class="fab fa-twitter"></i></div></li></a>
+                    <a target="_blank" href="https://www.youtube.com/brasilescola"><li class="redes__youtube"><div><i class="fab fa-youtube"></i></div></li></a>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row rodape-links-parceiros">
+            <div class="col-md-12" style="text-align: center">
+                <ul>
+                    <li><a target="_blank" href="https://www.biologianet.com">Biologia Net</a></li>
+                    <li><a target="_blank" href="https://brasilescola.uol.com.br/">Brasil Escola</a></li>
+                    <li><a target="_blank" href="https://escolakids.uol.com.br/">Escola Kids</a></li>
+                    <li><a target="_blank" href="https://www.historiadomundo.com.br">História do Mundo</a></li>
+                    <li><a target="_blank" href="https://www.manualdaquimica.com">Manual da Química</a></li>
+                    <li><a target="_blank" href="https://mundoeducacao.uol.com.br/">Mundo Educação</a></li>
+                    <li><a target="_blank" href="https://www.portugues.com.br">Português</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright py-3">
+        &copy; Copyright - PrePara ENEM 2021 - Todos os direitos reservados
+    </div>
+
+    <div class="banner-lgpd-consent-container">
+        <div class="banner-lgpd-consent banner-lgpd-consent--show">
+            <div class="banner-lgpd-consent__column" id="lgpd-consent__text">Ao navegar, você aceita que o Prepara Enem use cookies e parcerias para personalizar conteúdo e anúncios. <a href="https://www.preparaenem.com/politica-privacidade" target="_blank" class="banner-lgpd-consent__link">Política de privacidade</a></div>
+            <div class="banner-lgpd-consent__column"> 
+                <button class="banner-lgpd-consent__accept">OK</button>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- ./PubVideo -->
+<div id="pub_video">
+    <div class="player_dynad_tv"></div>
+</div>
+
+
+
+<!-- ./END -->
+<script type="text/javascript" defer src="https://www.preparaenem.com/assets/js/lib1.min.js"></script>
+<script type="text/javascript" defer src="https://www.preparaenem.com/assets/js/lib2.min.js?v=1"></script>
+
+
+
+<script type="text/javascript" defer src="https://www.preparaenem.com/assets/js/app-1.0.8.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML&t=H1CE" async ></script>    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"6a5485b2c2","applicationID":"537212469","transactionName":"MwRWbRNYDEICUkFYXwpOdVoVUA1fTHBFQWwsFUBJPXoNXxdDWl1cARNHZSJWDEUGRFFecwsPQEsOVQ5UEXFWXl4QBEFdDn0DVQxC","queueTime":0,"applicationTime":32,"atts":"H0NVG1tCH0w=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
